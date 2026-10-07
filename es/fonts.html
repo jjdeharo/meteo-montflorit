@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Temps a Montflorit</title>
+  <link rel="canonical" href="https://meteo-montflorit.github.io/es/fonts.html">
+  <meta http-equiv="refresh" content="0; url=https://meteo-montflorit.github.io/es/fonts.html">
+  <style>
+    :root { color-scheme: light dark; --fons: #f6f7f9; --text: #1c2430; --enllac: #1d4ed8; }
+    @media (prefers-color-scheme: dark) { :root { --fons: #12161c; --text: #e8ecf1; --enllac: #8ab4ff; } }
+    body { margin: 0; padding: 2rem 16px; background: var(--fons); color: var(--text);
+      font: 1.05rem/1.5 system-ui, sans-serif; }
+    a { color: var(--enllac); }
+  </style>
+  <script>
+    // La web s'ha traslladat (ADR 0028 de meteo-local). Es treu el service
+    // worker antic (només el d'aquesta web: l'origen és compartit) i es va
+    // a la mateixa pàgina a l'adreça nova.
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then((rs) => rs.filter((r) => r.scope.includes('/meteo-montflorit/')).forEach((r) => r.unregister())).catch(() => {});
+    }
+    if ('caches' in window) caches.delete('meteo-montflorit').catch(() => {});
+    location.replace('https://meteo-montflorit.github.io/es/fonts.html' + location.search + location.hash);
+  </script>
+</head>
+<body>
+  <p>Temps a Montflorit ha cambiado de dirección: <a href="https://meteo-montflorit.github.io/es/fonts.html">https://meteo-montflorit.github.io/es/fonts.html</a></p>
+</body>
+</html>
